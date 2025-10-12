@@ -1,0 +1,22 @@
+[
+  {
+    "path": "C:\\ProgramData\\Microsoft\\Windows Defender\\Definition Updates\\Backup\\mpasbase.lkg",
+    "exists": true,
+    "error": "permission denied: [WinError 5] Access is denied.: ['C:\\\\PROGRA~3\\\\MICROS~1\\\\WINDOW~1\\\\Definition Updates\\\\Backup\\\\mpasbase.lkg']"
+  },
+  {
+    "path": "C:\\ProgramData\\dotnet\\workloads\\Microsoft.Android.Sdk.Windows.Msi.x64\\35.0.92\\9cbca012256566d88087dd4bb24baef7-x64.msi",
+    "exists": true,
+    "moved_to_recycle": true
+  },
+  {
+    "path": "C:\\ProgramData\\Package Cache\\{B4D3359E-1191-4BBD-ABDB-0E4A39534981}v7.5.3.0\\PowerShell-7.5.3-win-x64.msi",
+    "exists": true,
+    "moved_to_recycle": true
+  },
+  {
+    "path": "C:\\ProgramData\\dotnet\\workloads\\Microsoft.Android.Sdk.Windows.Msi.x64\\34.0.154\\dbc501244ed5f0a90bd823629bf18067-x64.msi",
+    "exists": true,
+    "moved_to_recycle": true
+  }
+]

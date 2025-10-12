@@ -1,5 +1,9 @@
 # Storage Scrubber
 
+A test/CI badge will show here once workflows run:
+
+[![Python tests](https://github.com/gschull/StorageScrubber/actions/workflows/python-tests.yml/badge.svg)](https://github.com/gschull/StorageScrubber/actions)
+
 A lightweight Python CLI to scan your filesystem, classify files (personal, temp, cache, updates), produce JSON reports, and optionally move safe-to-delete files to the Recycle Bin.
 
 Features

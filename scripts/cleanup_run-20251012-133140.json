@@ -1,0 +1,812 @@
+{
+  "timestamp": "2025-10-12T20:31:40.986674Z",
+  "requested_count": 200,
+  "moved_count": 2,
+  "skipped_count": 198,
+  "failed_count": 0,
+  "moved": [
+    {
+      "path": "C:\\Users\\glsch\\.cache\\selenium\\chromedriver\\win64\\134.0.6998.165\\chromedriver.exe",
+      "size": null
+    },
+    {
+      "path": "C:\\Users\\glsch\\.cache\\selenium\\chromedriver\\win64\\134.0.6998.88\\chromedriver.exe",
+      "size": null
+    }
+  ],
+  "skipped": [
+    {
+      "path": "C:\\Users\\glsch\\.platformio\\.cache\\downloads\\7c6f33fbea0c7f11f5d4a03db9c01fb6e41b1435",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\0\\3\\5\\b\\b\\035bb9a8d631d0a0d9e848319681f72ca7cc61faf905f185a2f85630.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\0\\c\\1\\0\\1\\0c101e3727e01131cd18c4ff4049363ba22b5b6687707ce5caada95b.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\1\\a\\1\\1\\2\\1a11296ef93bd49edfe2a9951f9a756834aa2b8d06d3dceeaf401516.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\1\\f\\5\\c\\4\\1f5c4a940323bc4a19ce61746b8918b484af269cfc7734c396b3392e.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\2\\1\\1\\3\\8\\211383a5546ee4d362d965f4fb45a4287d52c1ef172f56f2bf67b3ce.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\2\\9\\c\\e\\4\\29ce4cb9a0b426c73ab7f1e73f85865f3ef2f4b08a8b9683629557d9.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\2\\d\\6\\7\\3\\2d673fa348a7e8d5f3a4087473c856b45fb46671e5ac7d220501bd68.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\3\\1\\5\\3\\9\\31539552f2303282ae40da968a51b4e53cadfeaff6b349f1c1a078d2.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\3\\1\\f\\a\\d\\31fad6d9226e93828d907967ad74dc40224c8582e8515958ca0adcf1.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\3\\5\\e\\8\\e\\35e8efb0ac940c954bf91b314c76c68b7f9df6f8af93a3d59d9be715.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\3\\6\\7\\b\\4\\367b4b815ea1bd871565be7620aebd7be6c79165541bbadfa3363fb6.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\3\\7\\d\\a\\9\\37da91f32d419e420b93e82f44b5eba0745e106943aba378e32f559b.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\4\\5\\7\\d\\e\\457de4d3a2bd0662b1b073cb43a77960215c37593ae5af99052a862c.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\4\\d\\5\\6\\4\\4d5649635b48f116053a9da9ade9cfe9f9d510b960941e34305d5175.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\5\\4\\4\\d\\a\\544daa6b94f8ef2f9328e2d28398f4342af5cd74948ea71f0ae4884a.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\5\\6\\1\\f\\f\\561ffa05b2352575f622a99ee1c6bf01241309ebaee0dc134a67fb76.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\5\\6\\a\\6\\7\\56a679b73119e5bebdb4ac4395b19ebf386a1a3a5b0c24d57fe6ddd8.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\5\\b\\4\\1\\8\\5b4181f9996e39feaf4d5a5e3d6f00c0c2e5c9cd9e7cc0cb5eb53e3f.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\5\\d\\7\\9\\3\\5d79334deab7341916d1e4f507d452582adfb25611ecb10f5bb79c75.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\6\\4\\1\\5\\6\\6415611de9c8bab34bce065d993596014215f5bea20dc455d239999a.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\6\\b\\d\\f\\e\\6bdfee673abbe7c76ea4f2c6f2786b26077d2e384ca247f5b48b237c.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\7\\d\\4\\9\\0\\7d490ac7c95bdbc0b631b2d73debb059aed678adf4253c831cef2c8c.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\7\\f\\7\\0\\7\\7f707f702a576363c25fd337a28895879604713e49126815ea79289b.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\0\\c\\f\\2\\80cf2568fc19837946d4bb9fb996132691484acbfc8056f568d48dee.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\1\\1\\a\\0\\811a06302139598447092f1a751b87898b3fd9aabf9c5229cd870c11.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\1\\5\\1\\3\\81513e85fbf63a9dea110a9d0a3d9f597a2df49505a78d14ea942d4a.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\1\\d\\c\\4\\81dc46295fdf1e648c1bad281709948f289a47fa7c8927ae1c66848d.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\2\\b\\6\\5\\82b65a5edf0dd8b4a45b1a2d52865ceb2d8828d497bcfa736d34c5b5.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\2\\c\\6\\a\\82c6a19cf2bcd5b0cd03c3ef143bdbf96efa6ffc5a3a1d718d95959a.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\3\\5\\b\\8\\835b864cf17fd0a7b17cc4436a784a3a26a0a5d8d6c6131c573d73cf.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\4\\a\\8\\d\\84a8d4c68d0c2cc8d9908e5641ae18372f1e6dda1464fbfd9d51c22c.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\5\\7\\b\\2\\857b2f4670b3554a9619646e1daf97189c85d6db6811457c31b614c8.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\b\\e\\e\\b\\8beeb8c090d3cb31d3ba4ce021c491fb07d4aacdd79add98961b5bad.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\8\\f\\f\\3\\9\\8ff3936d04da2b0d0952e1998d98d940577d0ff267f1afa11fe34d0d.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\9\\0\\4\\2\\7\\9042721d3b1bad55341a690a9005e15b00e82a9d526f46fdec779f81.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\9\\1\\5\\c\\7\\915c7639db81561a9e742a944f98115d5a4c322be964ecd70b1a50da.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\9\\6\\2\\e\\f\\962ef3ae9f84983a101492444fe8c16e46fd76aa49118c35d0927bc7.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\9\\b\\8\\8\\8\\9b888c4c5d08e7fc277571dc7711009c42d63d924a16e2992fb89718.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\a\\2\\b\\e\\a\\a2bea8e3ff6949e3e2b82d86b0f839bc48fdf6a98eaa2ef715c91e32.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\a\\5\\7\\1\\2\\a57126dd88719aff55ec32a381cc971e851d41601ee8d797d331449e.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\a\\6\\d\\c\\0\\a6dc0f387dc38bb2d3e92c1de470bfff74750aa6efca02b671a0b868.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\a\\8\\1\\8\\7\\a81870b7a407fa5c4da333a58294fbac8dc7e436f5838a1ac595714b.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\a\\9\\4\\e\\9\\a94e9312d444f2ef467e4d60d7c332c1389254437dfb00dee4c14ffe.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\a\\f\\7\\7\\2\\af7722c625b220ecaca60c8bc57e75f65989644736bd2605a269a7cc.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\b\\2\\c\\9\\7\\b2c9710507e6183faa924c1ee860e9c31b06cc85c4e3f032d62887ea.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\b\\5\\c\\2\\1\\b5c21a41a9b76d48e3a273032e14e998344465cde60285e03d2872f1.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\b\\6\\5\\0\\a\\b650af8e69d53f3cb615719f4dbabb8e046925474e3fb2eec90155b0.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\b\\7\\3\\e\\7\\b73e7fc77d310d16af9ece412efe2e01532be24ec71f2fd678683ff8.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\b\\a\\a\\b\\0\\baab07b9dd2ffd02bc86d09a59cd96c8d78e27eaa4313f169b79ca4c.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\c\\4\\a\\f\\3\\c4af329deedf888e9202b770bfca0054fb894c5e25a85824fd06cc82.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\c\\d\\5\\f\\a\\cd5fade981f7c06b3d1095763980522a492baa8e94f85e2620abb65a.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\d\\1\\0\\9\\c\\d109cf21b4692de5e7f1c80d8b8b8e446a38ab4e898dd76ebf22ef78.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\d\\7\\e\\2\\1\\d7e2148a457d35204f4485fff0d4b22176ef506458b0a8da9cc5ab94.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\d\\a\\0\\b\\0\\da0b0e92875497ac5118861a348b5ce67a82a083a0c7ddb273e1ce90.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\d\\f\\e\\a\\3\\dfea3bc495b391e6ddfe6e941694f796c1842f1b0b9b9044bc26ff17.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\e\\1\\6\\c\\e\\e16ce8c868621ebe2f8c3dcbb5dba12d1f97bf8b2a12a08732366ffb.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\e\\3\\3\\6\\a\\e336a75bd24082321ae980b2ab79d386449574ac1f9678446cef10e8.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\e\\9\\7\\f\\0\\e97f048c5c24640a3950fb89f3cb6a6ad3c760178b83aac6d829e41a.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\f\\9\\5\\c\\d\\f95cd5480f0c7c9ee0f88685025ae26d699458f57ce6786f4ee93cfc.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\AppData\\Local\\pip\\cache\\http-v2\\f\\f\\6\\b\\f\\ff6bf5e85d9c3aadca5b787dff54e321cc15d45bf1ca1cdf36339e08.body",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\microsoft.graphics.win2d.1.3.2.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\include\\arm64\\Microsoft.Graphics.Canvas.h",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\include\\x64\\Microsoft.Graphics.Canvas.h",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\include\\x86\\Microsoft.Graphics.Canvas.h",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\lib\\net6.0-windows10.0.19041.0\\Microsoft.Graphics.Canvas.Interop.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\runtimes\\win-arm64\\native\\Microsoft.Graphics.Canvas.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\runtimes\\win-x64\\native\\Microsoft.Graphics.Canvas.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.graphics.win2d\\1.3.2\\runtimes\\win-x86\\native\\Microsoft.Graphics.Canvas.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.build.tasks\\9.0.82\\microsoft.maui.controls.build.tasks.9.0.82.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.build.tasks\\9.0.82\\buildTransitive\\netstandard2.0\\Microsoft.Maui.Controls.Build.Tasks.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\microsoft.maui.controls.core.9.0.82.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-android35.0\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-android35.0\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-ios18.0\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-ios18.0\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-maccatalyst18.0\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-maccatalyst18.0\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-tizen7.0\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-tizen7.0\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-windows10.0.19041\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-windows10.0.19041\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-windows10.0.20348\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\net9.0-windows10.0.20348\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\netstandard2.0\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\netstandard2.0\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\netstandard2.1\\Microsoft.Maui.Controls.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.controls.core\\9.0.82\\lib\\netstandard2.1\\Microsoft.Maui.Controls.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.core\\9.0.82\\microsoft.maui.core.9.0.82.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.essentials\\9.0.82\\microsoft.maui.essentials.9.0.82.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.graphics\\9.0.82\\microsoft.maui.graphics.9.0.82.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\microsoft.maui.resizetizer.9.0.82.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\libHarfBuzzSharp.dylib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\libSkiaSharp.dylib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\arm\\libHarfBuzzSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\arm\\libSkiaSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\arm64\\libHarfBuzzSharp.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\arm64\\libHarfBuzzSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\arm64\\libSkiaSharp.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\arm64\\libSkiaSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\musl-x64\\libHarfBuzzSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\musl-x64\\libSkiaSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\x64\\libHarfBuzzSharp.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\x64\\libHarfBuzzSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\x64\\libSkiaSharp.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\x64\\libSkiaSharp.so",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\x86\\libHarfBuzzSharp.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.82\\buildTransitive\\x86\\libSkiaSharp.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.6\\microsoft.net.illink.tasks.9.0.6.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\microsoft.netcore.app.ref.9.0.8.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\ref\\net9.0\\System.Data.Common.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\ref\\net9.0\\System.Runtime.Intrinsics.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\ref\\net9.0\\System.Runtime.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\ref\\net9.0\\System.Security.Cryptography.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.8\\ref\\net9.0\\System.Xml.ReaderWriter.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\microsoft.web.webview2.1.0.2903.40.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\build\\native\\arm64\\WebView2LoaderStatic.lib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\build\\native\\include\\WebView2.h",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\build\\native\\x64\\WebView2LoaderStatic.lib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.2903.40\\build\\native\\x86\\WebView2LoaderStatic.lib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\microsoft.web.webview2.1.0.3179.45.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\build\\native\\arm64\\WebView2LoaderStatic.lib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\build\\native\\include\\WebView2.h",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\build\\native\\x64\\WebView2LoaderStatic.lib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\build\\native\\x86\\WebView2LoaderStatic.lib",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.web.webview2\\1.0.3179.45\\runtimes\\win-arm64\\native_uap\\Microsoft.Web.WebView2.Core.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\arm64\\appxpackaging.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\arm64\\midlc.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\arm64\\midlrt.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\arm64\\mt.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\arm64\\opcservices.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\arm64\\ServicingCommon.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x64\\appxpackaging.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x64\\midlc.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x64\\midlrt.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x64\\mt.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x64\\opcservices.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x86\\appxpackaging.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x86\\midlrt.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x86\\mt.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.756\\bin\\10.0.22621.0\\x86\\opcservices.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\lib\\net8.0\\Microsoft.Windows.SDK.NET.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\lib\\net8.0\\Microsoft.Windows.SDK.NET.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\lib\\net8.0\\Microsoft.Windows.UI.Xaml.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\lib\\net8.0\\Microsoft.Windows.UI.Xaml.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\winmd\\Windows.Foundation.UniversalApiContract.winmd",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\microsoft.windowsappsdk.1.6.241114003.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.InteractiveExperiences.Projection.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.WinUI.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.WinUI.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.WinUI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.InteractiveExperiences.Projection.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.WinUI.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.WinUI.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.WinUI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\uap10.0\\Microsoft.UI.Xaml.winmd",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\uap10.0\\Microsoft.UI.Xaml.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\lib\\uap10.0\\Microsoft.UI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\arm64\\GenXbf.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\MSIX\\win10-arm64\\Microsoft.WindowsAppRuntime.1.6.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\MSIX\\win10-x64\\Microsoft.WindowsAppRuntime.1.6.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\MSIX\\win10-x86\\Microsoft.WindowsAppRuntime.1.6.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\net472\\Microsoft.Build.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\net472\\Microsoft.Cci.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\net472\\Microsoft.UI.Xaml.Markup.Compiler.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\net472\\XamlCompiler.exe",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\net6.0\\Microsoft.Cci.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\net6.0\\Microsoft.UI.Xaml.Markup.Compiler.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\tools\\x64\\GenXbf.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\microsoft.windowsappsdk.1.7.250513003.nupkg",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.InteractiveExperiences.Projection.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.WinUI.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.WinUI.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.17763.0\\Microsoft.WinUI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.InteractiveExperiences.Projection.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.WinUI.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.WinUI.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.18362.0\\Microsoft.WinUI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.22621.0\\Microsoft.InteractiveExperiences.Projection.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.22621.0\\Microsoft.WinUI.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.22621.0\\Microsoft.WinUI.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\net6.0-windows10.0.22621.0\\Microsoft.WinUI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\uap10.0\\Microsoft.UI.Xaml.winmd",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\uap10.0\\Microsoft.UI.Xaml.xml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\lib\\uap10.0\\Microsoft.UI\\Themes\\generic.xaml",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\arm64\\GenXbf.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\arm64ec\\GenXbf.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\MSIX\\win10-arm64\\Microsoft.WindowsAppRuntime.1.7.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\MSIX\\win10-arm64ec\\Microsoft.WindowsAppRuntime.1.7.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\MSIX\\win10-x64\\Microsoft.WindowsAppRuntime.1.7.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\MSIX\\win10-x86\\Microsoft.WindowsAppRuntime.1.7.msix",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\net472\\Microsoft.Build.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\net472\\Microsoft.Cci.dll",
+      "reason": "not found"
+    },
+    {
+      "path": "C:\\Users\\glsch\\.nuget\\packages\\microsoft.windowsappsdk\\1.7.250513003\\tools\\net472\\Microsoft.UI.Xaml.Markup.Compiler.dll",
+      "reason": "not found"
+    }
+  ],
+  "failed": []
+}

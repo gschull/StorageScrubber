@@ -1,0 +1,20 @@
+{
+  "moved": [
+    "C:\\Users\\glsch\\.cache",
+    "C:\\Users\\glsch\\.wdm\\drivers",
+    "C:\\Users\\glsch\\AppData\\Local\\Google\\Chrome\\User Data\\SwReporter",
+    "C:\\Users\\glsch\\AppData\\Local\\Arduino15\\staging",
+    "C:\\Users\\glsch\\AppData\\Local\\Microsoft\\Teams"
+  ],
+  "failed": [],
+  "not_found": [
+    "C:\\Users\\glsch\\.platformio\\.cache",
+    "C:\\Users\\glsch\\.platformio\\packages",
+    "C:\\Users\\glsch\\.cursor\\extensions",
+    "C:\\Users\\glsch\\AppData\\Local\\pip\\cache",
+    "C:\\Users\\glsch\\.nuget\\packages",
+    "C:\\Users\\glsch\\AppData\\Local\\Microsoft\\vscode-cpptools",
+    "C:\\Users\\glsch\\AppData\\Local\\unityhub-updater",
+    "C:\\Users\\glsch\\AppData\\Local\\arduino-ide-updater"
+  ]
+}

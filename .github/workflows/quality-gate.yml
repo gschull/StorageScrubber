@@ -100,15 +100,34 @@ jobs:
                 if c in cols:
                   status_col = c
                   break
+            # map mutmut statuses to killed/survived/timeout
+            def map_status(s):
+              try:
+                k = (s or '').strip().lower()
+              except Exception:
+                k = str(s).strip().lower()
+              if k in ('killed','ok','killed_by_test','detected'):
+                return 'killed'
+              if k in ('timeout','timed_out','killed_by_timeout'):
+                return 'timeout'
+              if k in ('survived','alive','suspicious','incompetent','no_result','uncertain'):
+                return 'survived'
+              if k in ('skipped','untested','ignored','hidden'):
+                return None
+              return 'survived'
+            # Debug info to help map statuses correctly across mutmut versions
+            try:
+              print("Mutmut tables:", sorted(tables))
+              print("Using:", table, status_col)
+              if table:
+                print("Distinct statuses:", [str(r[0]) for r in cur.execute(f"SELECT DISTINCT {status_col} FROM {table}")])
+            except Exception:
+              pass
             if table is not None:
               for status, cnt in cur.execute(f"SELECT {status_col}, COUNT(*) FROM {table} GROUP BY {status_col}"):
-                # normalize to string and lowercase
-                try:
-                  key = (status or '').lower()
-                except Exception:
-                  key = str(status).lower()
-                if key in counts:
-                  counts[key] = cnt
+                m = map_status(status)
+                if m in counts:
+                  counts[m] += cnt
             killed, survived, timeout = counts['killed'], counts['survived'], counts['timeout']
             considered = killed + survived + timeout
             score = 100.0 if considered == 0 else (killed / considered) * 100.0

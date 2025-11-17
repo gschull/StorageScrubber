@@ -73,46 +73,53 @@ jobs:
         run: |
           python - <<'PY'
           import json, sqlite3, subprocess, re, textwrap
+          from pathlib import Path
 
           def read_mutation_counts():
               killed = survived = timeout = 0
               considered = 0
               source = "none"
+
+              # Prefer DB if present and non-empty, else fall back to CLI parsing
               con = None
               try:
-                  con = sqlite3.connect('.mutmut-cache')
-                  cur = con.cursor()
-                  tables = {row[0] for row in cur.execute("SELECT name FROM sqlite_master WHERE type='table'")}
-                  table = 'results' if 'results' in tables else ('mutants' if 'mutants' in tables else None)
-                  status_col = 'status'
-                  if not table:
-                      print(f"Mutmut DB tables: {sorted(tables)}")
-                  if table:
-                      cols = {r[1] for r in cur.execute(f"PRAGMA table_info({table})")}
-                      print(f"Mutmut DB table '{table}' columns: {sorted(cols)}")
-                      for c in ('status','result','outcome'):
-                          if c in cols:
-                              status_col = c
-                              break
-                      counts = {'killed':0,'survived':0,'timeout':0}
-                      def map_status(s):
-                          k = str(s or '').strip().lower()
-                          if k in ('killed','ok','killed_by_test','detected'):
-                              return 'killed'
-                          if k in ('timeout','timed_out','killed_by_timeout'):
-                              return 'timeout'
-                          if k in ('survived','alive','suspicious','incompetent','no_result','uncertain'):
+                  db_path = Path('.mutmut-cache')
+                  if db_path.exists() and db_path.stat().st_size > 0:
+                      con = sqlite3.connect(str(db_path))
+                      cur = con.cursor()
+                      tables = {row[0] for row in cur.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+                      table = 'results' if 'results' in tables else ('mutants' if 'mutants' in tables else None)
+                      status_col = 'status'
+                      if not table:
+                          print(f"Mutmut DB tables: {sorted(tables)}")
+                      if table:
+                          cols = {r[1] for r in cur.execute(f"PRAGMA table_info({table})")}
+                          print(f"Mutmut DB table '{table}' columns: {sorted(cols)}")
+                          for c in ('status','result','outcome'):
+                              if c in cols:
+                                  status_col = c
+                                  break
+                          counts = {'killed':0,'survived':0,'timeout':0}
+                          def map_status(s):
+                              k = str(s or '').strip().lower()
+                              if k in ('killed','ok','killed_by_test','detected'):
+                                  return 'killed'
+                              if k in ('timeout','timed_out','killed_by_timeout'):
+                                  return 'timeout'
+                              if k in ('survived','alive','suspicious','incompetent','no_result','uncertain'):
+                                  return 'survived'
+                              if k in ('skipped','untested','ignored','hidden'):
+                                  return None
                               return 'survived'
-                          if k in ('skipped','untested','ignored','hidden'):
-                              return None
-                          return 'survived'
-                      for status, cnt in cur.execute(f"SELECT {status_col}, COUNT(*) FROM {table} GROUP BY {status_col}"):
-                          m = map_status(status)
-                          if m in counts:
-                              counts[m] += int(cnt)
-                      killed, survived, timeout = counts['killed'], counts['survived'], counts['timeout']
-                      considered = killed + survived + timeout
-                      source = "db"
+                          for status, cnt in cur.execute(f"SELECT {status_col}, COUNT(*) FROM {table} GROUP BY {status_col}"):
+                              m = map_status(status)
+                              if m in counts:
+                                  counts[m] += int(cnt)
+                          killed, survived, timeout = counts['killed'], counts['survived'], counts['timeout']
+                          considered = killed + survived + timeout
+                          source = "db"
+                  else:
+                      print("Mutmut DB not present or empty; using CLI parsing")
               except Exception as e:
                   print(f"Mutmut DB read error: {e}")
               finally:
@@ -123,23 +130,57 @@ jobs:
 
               if considered == 0:
                   try:
+                      # Detect available flags
+                      help_proc = subprocess.run(['mutmut','results','--help'], capture_output=True, text=True, check=False)
+                      help_out = (help_proc.stdout or '') + '\n' + (help_proc.stderr or '')
+                      has_show_killed = '--show-killed' in help_out
+                      has_show_timeouts = ('--show-timeouts' in help_out) or ('--show-timeout' in help_out)
+
+                      # Default results lists survivors
                       res = subprocess.run(['mutmut','results'], capture_output=True, text=True, check=False)
                       text = (res.stdout or '') + '\n' + (res.stderr or '')
-                      # Print a trimmed version of the output for debugging/format discovery
                       trimmed = '\n'.join(text.splitlines()[:50])
                       print("mutmut results (first lines):\n" + textwrap.indent(trimmed, prefix="  "))
 
-                      # Try multiple parsing strategies
-                      def get_first(pat):
-                          m = re.search(pat, text, re.IGNORECASE | re.MULTILINE)
-                          return int(m.group(1)) if m else 0
+                      def count_status(lines, word):
+                          n = 0
+                          for ln in lines:
+                              low = ln.strip().lower()
+                              if low.endswith(f": {word}") or f" {word}" in low:
+                                  n += 1
+                          return n
 
-                      killed = get_first(r"^\s*Killed(?:\s+mutants)?\s*:\s*(\d+)") or get_first(r"killed\s+(\d+)")
-                      survived_only = get_first(r"^\s*Survived(?:\s+mutants)?\s*:\s*(\d+)") or get_first(r"survived\s+(\d+)")
-                      suspicious = get_first(r"^\s*Suspicious(?:\s+mutants)?\s*:\s*(\d+)") or get_first(r"suspicious\s+(\d+)")
-                      timeout = get_first(r"^\s*Timeouts?\s*:\s*(\d+)") or get_first(r"timed\s*out\s*:\s*(\d+)") or get_first(r"timeout\s+(\d+)")
+                      lines = [l for l in text.splitlines() if l.strip()]
+                      survived = count_status(lines, 'survived')
 
-                      survived = survived_only + suspicious
+                      if has_show_killed:
+                          rk = subprocess.run(['mutmut','results','--show-killed'], capture_output=True, text=True, check=False)
+                          ktext = (rk.stdout or '') + '\n' + (rk.stderr or '')
+                          killed = count_status([l for l in ktext.splitlines() if l.strip()], 'killed')
+                      else:
+                          print("mutmut results lacks --show-killed; leaving killed=0 unless summary detection works")
+
+                      if has_show_timeouts:
+                          rt = subprocess.run(['mutmut','results','--show-timeouts'], capture_output=True, text=True, check=False)
+                          ttext = (rt.stdout or '') + '\n' + (rt.stderr or '')
+                          timeout = count_status([l for l in ttext.splitlines() if l.strip()], 'timeout')
+                      else:
+                          print("mutmut results lacks --show-timeouts; leaving timeout=0 unless summary detection works")
+
+                      # Last-resort: try summary-like patterns in any output
+                      def get_first(pat, whole):
+                          m = re.search(pat, whole, re.IGNORECASE | re.MULTILINE)
+                          return int(m.group(1)) if m else None
+
+                      if killed == 0:
+                          k = get_first(r"^\s*Killed(?:\s+mutants)?\s*:\s*(\d+)", text) or get_first(r"killed\s+(\d+)", text)
+                          if k is not None:
+                              killed = k
+                      if timeout == 0:
+                          t = get_first(r"^\s*Timeouts?\s*:\s*(\d+)", text) or get_first(r"timed\s*out\s*:\s*(\d+)", text) or get_first(r"timeout\s+(\d+)", text)
+                          if t is not None:
+                              timeout = t
+
                       considered = killed + survived + timeout
                       source = "cli"
                   except Exception as e:

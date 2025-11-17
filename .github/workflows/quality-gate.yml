@@ -161,18 +161,55 @@ jobs:
           cur = con.cursor()
           counts = {s: 0 for s in ('killed','survived','timeout')}
           try:
-            for status, cnt in cur.execute("SELECT status, COUNT(*) FROM results GROUP BY status"):
-              if status in counts:
-                counts[status] = cnt
+            tables = {row[0] for row in cur.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            status_col = 'status'
+            table = None
+            if 'results' in tables:
+              table = 'results'
+              cols = {r[1] for r in cur.execute("PRAGMA table_info(results)")}
+              for c in ('status','result','outcome'):
+                if c in cols:
+                  status_col = c
+                  break
+            elif 'mutants' in tables:
+              table = 'mutants'
+              cols = {r[1] for r in cur.execute("PRAGMA table_info(mutants)")}
+              for c in ('status','result','outcome'):
+                if c in cols:
+                  status_col = c
+                  break
+            def map_status(s):
+              try:
+                k = (s or '').strip().lower()
+              except Exception:
+                k = str(s).strip().lower()
+              if k in ('killed','ok','killed_by_test','detected'):
+                return 'killed'
+              if k in ('timeout','timed_out','killed_by_timeout'):
+                return 'timeout'
+              if k in ('survived','alive','suspicious','incompetent','no_result','uncertain'):
+                return 'survived'
+              if k in ('skipped','untested','ignored','hidden'):
+                return None
+              return None
+            if table is None:
+              raise RuntimeError('Could not find mutmut results table')
+            for status, cnt in cur.execute(f"SELECT {status_col}, COUNT(*) FROM {table} GROUP BY {status_col}"):
+              m = map_status(status)
+              if m in counts:
+                counts[m] += cnt
           except Exception as e:
             print(f"Failed reading results from mutmut cache: {e}")
             print("WARN: Skipping mutation threshold check")
-            con.close()
+            try:
+              con.close()
+            except Exception:
+              pass
             sys.exit(0)
           finally:
             try:
               con.close()
-            except:
+            except Exception:
               pass
           killed = counts['killed']
           survived = counts['survived']

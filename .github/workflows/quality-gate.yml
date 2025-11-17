@@ -66,7 +66,7 @@ jobs:
       - name: Run mutation tests (mutmut)
         env:
           PYTHONPATH: ${{ github.workspace }}
-        run: mutmut run || true
+        run: mutmut run | tee mutmut_run.log || true
 
       - name: Collect Python metrics
         id: metrics
@@ -130,59 +130,79 @@ jobs:
 
               if considered == 0:
                   try:
-                      # Detect available flags
-                      help_proc = subprocess.run(['mutmut','results','--help'], capture_output=True, text=True, check=False)
-                      help_out = (help_proc.stdout or '') + '\n' + (help_proc.stderr or '')
-                      has_show_killed = '--show-killed' in help_out
-                      has_show_timeouts = ('--show-timeouts' in help_out) or ('--show-timeout' in help_out)
+                      # 1) Prefer parsing the run summary from mutmut_run.log (has emoji counters)
+                      run_log = Path('mutmut_run.log')
+                      if run_log.exists():
+                          log_text = run_log.read_text(encoding='utf-8', errors='ignore')
+                          lines = [l for l in log_text.splitlines() if '/' in l and ('🎉' in l or '🙁' in l or '⏰' in l or 'mutations/second' in l)]
+                          last = lines[-1] if lines else ''
+                          def pick(pat, s):
+                              m = re.search(pat, s, re.IGNORECASE)
+                              return int(m.group(1)) if m else None
+                          k = pick(r'🎉\s*(\d+)', last) or pick(r'killed[^0-9]*(\d+)', last)
+                          t = pick(r'⏰\s*(\d+)', last) or pick(r'time(?:out|outs)?[^0-9]*(\d+)', last)
+                          s = pick(r'🙁\s*(\d+)', last) or pick(r'survived[^0-9]*(\d+)', last)
+                          if any(v is not None for v in (k, s, t)):
+                              killed = k or 0
+                              survived = s or 0
+                              timeout = t or 0
+                              considered = killed + survived + timeout
+                              print(f"Parsed from mutmut_run.log: {last.strip()}")
+                              source = "cli-log"
 
-                      # Default results lists survivors
-                      res = subprocess.run(['mutmut','results'], capture_output=True, text=True, check=False)
-                      text = (res.stdout or '') + '\n' + (res.stderr or '')
-                      trimmed = '\n'.join(text.splitlines()[:50])
-                      print("mutmut results (first lines):\n" + textwrap.indent(trimmed, prefix="  "))
+                      # 2) If still nothing, fall back to mutmut results listing (survivors-only)
+                      if considered == 0:
+                          help_proc = subprocess.run(['mutmut','results','--help'], capture_output=True, text=True, check=False)
+                          help_out = (help_proc.stdout or '') + '\n' + (help_proc.stderr or '')
+                          has_show_killed = '--show-killed' in help_out
+                          has_show_timeouts = ('--show-timeouts' in help_out) or ('--show-timeout' in help_out)
 
-                      def count_status(lines, word):
-                          n = 0
-                          for ln in lines:
-                              low = ln.strip().lower()
-                              if low.endswith(f": {word}") or f" {word}" in low:
-                                  n += 1
-                          return n
+                          res = subprocess.run(['mutmut','results'], capture_output=True, text=True, check=False)
+                          text = (res.stdout or '') + '\n' + (res.stderr or '')
+                          trimmed = '\n'.join(text.splitlines()[:50])
+                          print("mutmut results (first lines):\n" + textwrap.indent(trimmed, prefix="  "))
 
-                      lines = [l for l in text.splitlines() if l.strip()]
-                      survived = count_status(lines, 'survived')
+                          def count_status(lines, word):
+                              n = 0
+                              for ln in lines:
+                                  low = ln.strip().lower()
+                                  if low.endswith(f": {word}") or f" {word}" in low:
+                                      n += 1
+                              return n
 
-                      if has_show_killed:
-                          rk = subprocess.run(['mutmut','results','--show-killed'], capture_output=True, text=True, check=False)
-                          ktext = (rk.stdout or '') + '\n' + (rk.stderr or '')
-                          killed = count_status([l for l in ktext.splitlines() if l.strip()], 'killed')
-                      else:
-                          print("mutmut results lacks --show-killed; leaving killed=0 unless summary detection works")
+                          lines = [l for l in text.splitlines() if l.strip()]
+                          survived = count_status(lines, 'survived')
 
-                      if has_show_timeouts:
-                          rt = subprocess.run(['mutmut','results','--show-timeouts'], capture_output=True, text=True, check=False)
-                          ttext = (rt.stdout or '') + '\n' + (rt.stderr or '')
-                          timeout = count_status([l for l in ttext.splitlines() if l.strip()], 'timeout')
-                      else:
-                          print("mutmut results lacks --show-timeouts; leaving timeout=0 unless summary detection works")
+                          if has_show_killed:
+                              rk = subprocess.run(['mutmut','results','--show-killed'], capture_output=True, text=True, check=False)
+                              ktext = (rk.stdout or '') + '\n' + (rk.stderr or '')
+                              killed = count_status([l for l in ktext.splitlines() if l.strip()], 'killed')
+                          else:
+                              print("mutmut results lacks --show-killed; leaving killed=0 unless summary detection works")
 
-                      # Last-resort: try summary-like patterns in any output
-                      def get_first(pat, whole):
-                          m = re.search(pat, whole, re.IGNORECASE | re.MULTILINE)
-                          return int(m.group(1)) if m else None
+                          if has_show_timeouts:
+                              rt = subprocess.run(['mutmut','results','--show-timeouts'], capture_output=True, text=True, check=False)
+                              ttext = (rt.stdout or '') + '\n' + (rt.stderr or '')
+                              timeout = count_status([l for l in ttext.splitlines() if l.strip()], 'timeout')
+                          else:
+                              print("mutmut results lacks --show-timeouts; leaving timeout=0 unless summary detection works")
 
-                      if killed == 0:
-                          k = get_first(r"^\s*Killed(?:\s+mutants)?\s*:\s*(\d+)", text) or get_first(r"killed\s+(\d+)", text)
-                          if k is not None:
-                              killed = k
-                      if timeout == 0:
-                          t = get_first(r"^\s*Timeouts?\s*:\s*(\d+)", text) or get_first(r"timed\s*out\s*:\s*(\d+)", text) or get_first(r"timeout\s+(\d+)", text)
-                          if t is not None:
-                              timeout = t
+                          # Last-resort: try summary-like patterns in any output
+                          def get_first(pat, whole):
+                              m = re.search(pat, whole, re.IGNORECASE | re.MULTILINE)
+                              return int(m.group(1)) if m else None
 
-                      considered = killed + survived + timeout
-                      source = "cli"
+                          if killed == 0:
+                              kk = get_first(r"^\s*Killed(?:\s+mutants)?\s*:\s*(\d+)", text) or get_first(r"killed[^0-9]*(\d+)", text)
+                              if kk is not None:
+                                  killed = kk
+                          if timeout == 0:
+                              tt = get_first(r"^\s*Timeouts?\s*:\s*(\d+)", text) or get_first(r"timed\s*out\s*:\s*(\d+)", text) or get_first(r"timeout[^0-9]*(\d+)", text)
+                              if tt is not None:
+                                  timeout = tt
+
+                          considered = killed + survived + timeout
+                          source = "cli"
                   except Exception as e:
                       print(f"Mutmut CLI parse error: {e}")
               return killed, survived, timeout, considered, source

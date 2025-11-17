@@ -134,12 +134,17 @@ jobs:
                       run_log = Path('mutmut_run.log')
                       if run_log.exists():
                           log_text = run_log.read_text(encoding='utf-8', errors='ignore')
-                          # Find lines with progress like "255/255" - the last one before "mutations/second"
-                          lines = [l for l in log_text.splitlines() if '/' in l and any(c.isdigit() for c in l)]
-                          # Get the line with the most numbers (the final summary has all counters)
-                          lines_with_counts = [(l, len([c for c in l.split() if c.strip().isdigit()])) for l in lines]
-                          lines_with_counts.sort(key=lambda x: x[1], reverse=True)
-                          last = lines_with_counts[0][0] if lines_with_counts else ''
+                          # The final summary is the line right before "mutations/second"
+                          lines = log_text.splitlines()
+                          last = ''
+                          for i, line in enumerate(lines):
+                              if 'mutations/second' in line and i > 0:
+                                  last = lines[i-1]
+                                  break
+                          if not last:
+                              # Fallback: find line matching pattern like "255/255" with multiple counters
+                              candidates = [l for l in lines if '/' in l and l.count(' ') > 5]
+                              last = candidates[-1] if candidates else ''
                           print(f"mutmut_run.log last summary line: {last[:200]}")
                           def pick(pat, s):
                               m = re.search(pat, s, re.IGNORECASE)

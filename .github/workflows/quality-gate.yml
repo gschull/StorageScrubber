@@ -59,9 +59,13 @@ jobs:
           PY
 
       - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: pytest -q
 
       - name: Run mutation tests (mutmut)
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: mutmut run || true
 
       - name: Collect Python metrics

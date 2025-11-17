@@ -189,7 +189,6 @@ jobs:
               '',
               '_Higher mutation score = stronger tests. Critical vulns mean risky dependencies._'
             ].join('\n');
-            const {context, github} = require('@actions/github');
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,

@@ -82,9 +82,33 @@ jobs:
             con = sqlite3.connect('.mutmut-cache')
             cur = con.cursor()
             counts = {s: 0 for s in ('killed','survived','timeout')}
-            for status, cnt in cur.execute("SELECT status, COUNT(*) FROM results GROUP BY status"):
-              if status in counts:
-                counts[status] = cnt
+            tables = {row[0] for row in cur.execute("SELECT name FROM sqlite_master WHERE type='table'")}
+            status_col = 'status'
+            table = None
+            if 'results' in tables:
+              table = 'results'
+              # prefer 'status' but fall back to 'result' or 'outcome'
+              cols = {r[1] for r in cur.execute("PRAGMA table_info(results)")}
+              for c in ('status','result','outcome'):
+                if c in cols:
+                  status_col = c
+                  break
+            elif 'mutants' in tables:
+              table = 'mutants'
+              cols = {r[1] for r in cur.execute("PRAGMA table_info(mutants)")}
+              for c in ('status','result','outcome'):
+                if c in cols:
+                  status_col = c
+                  break
+            if table is not None:
+              for status, cnt in cur.execute(f"SELECT {status_col}, COUNT(*) FROM {table} GROUP BY {status_col}"):
+                # normalize to string and lowercase
+                try:
+                  key = (status or '').lower()
+                except Exception:
+                  key = str(status).lower()
+                if key in counts:
+                  counts[key] = cnt
             killed, survived, timeout = counts['killed'], counts['survived'], counts['timeout']
             considered = killed + survived + timeout
             score = 100.0 if considered == 0 else (killed / considered) * 100.0

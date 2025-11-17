@@ -191,7 +191,8 @@ jobs:
                 return 'survived'
               if k in ('skipped','untested','ignored','hidden'):
                 return None
-              return None
+                # default to survived for unknown statuses to avoid false 100%
+                return 'survived'
             if table is None:
               raise RuntimeError('Could not find mutmut results table')
             for status, cnt in cur.execute(f"SELECT {status_col}, COUNT(*) FROM {table} GROUP BY {status_col}"):

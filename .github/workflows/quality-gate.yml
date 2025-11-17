@@ -1,0 +1,22 @@
+name: Quality Gate
+
+on:
+  pull_request:
+    branches: [ main, master, develop ]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  quality-check:
+    uses: gschull/software-quality-collapse/.github/workflows/quality-gate-reusable.yml@v0.3.1
+    with:
+      # Python settings
+      py_mutation_min: '75.0'
+      py_dep_health_fail: 'critical'
+      
+      # Upload results to dashboard
+      upload_results: 'true'
+    secrets:
+      upload_token: ${{ secrets.QUALITY_GATE_INGEST_TOKEN }}

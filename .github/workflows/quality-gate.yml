@@ -72,7 +72,7 @@ jobs:
         id: metrics
         run: |
           python - <<'PY'
-          import json, sqlite3, subprocess, re
+          import json, sqlite3, subprocess, re, textwrap
 
           def read_mutation_counts():
               killed = survived = timeout = 0
@@ -85,8 +85,11 @@ jobs:
                   tables = {row[0] for row in cur.execute("SELECT name FROM sqlite_master WHERE type='table'")}
                   table = 'results' if 'results' in tables else ('mutants' if 'mutants' in tables else None)
                   status_col = 'status'
+                  if not table:
+                      print(f"Mutmut DB tables: {sorted(tables)}")
                   if table:
                       cols = {r[1] for r in cur.execute(f"PRAGMA table_info({table})")}
+                      print(f"Mutmut DB table '{table}' columns: {sorted(cols)}")
                       for c in ('status','result','outcome'):
                           if c in cols:
                               status_col = c
@@ -122,14 +125,21 @@ jobs:
                   try:
                       res = subprocess.run(['mutmut','results'], capture_output=True, text=True, check=False)
                       text = (res.stdout or '') + '\n' + (res.stderr or '')
-                      def get(pat):
-                          m = re.search(pat, text, re.IGNORECASE)
+                      # Print a trimmed version of the output for debugging/format discovery
+                      trimmed = '\n'.join(text.splitlines()[:50])
+                      print("mutmut results (first lines):\n" + textwrap.indent(trimmed, prefix="  "))
+
+                      # Try multiple parsing strategies
+                      def get_first(pat):
+                          m = re.search(pat, text, re.IGNORECASE | re.MULTILINE)
                           return int(m.group(1)) if m else 0
-                      killed = get(r"Killed(?: mutants)?:\s*(\d+)")
-                      survived = get(r"Survived(?: mutants)?:\s*(\d+)")
-                      suspicious = get(r"Suspicious(?: mutants)?:\s*(\d+)")
-                      timeout = get(r"Timeouts?:\s*(\d+)")
-                      survived += suspicious
+
+                      killed = get_first(r"^\s*Killed(?:\s+mutants)?\s*:\s*(\d+)") or get_first(r"killed\s+(\d+)")
+                      survived_only = get_first(r"^\s*Survived(?:\s+mutants)?\s*:\s*(\d+)") or get_first(r"survived\s+(\d+)")
+                      suspicious = get_first(r"^\s*Suspicious(?:\s+mutants)?\s*:\s*(\d+)") or get_first(r"suspicious\s+(\d+)")
+                      timeout = get_first(r"^\s*Timeouts?\s*:\s*(\d+)") or get_first(r"timed\s*out\s*:\s*(\d+)") or get_first(r"timeout\s+(\d+)")
+
+                      survived = survived_only + suspicious
                       considered = killed + survived + timeout
                       source = "cli"
                   except Exception as e:
@@ -140,6 +150,9 @@ jobs:
               try:
                   with open('audit.json','r',encoding='utf-8') as f:
                       data = json.load(f)
+                  # Some environments produce a JSON string like "No known vulnerabilities found".
+                  if isinstance(data, str):
+                      return {"critical":0,"high":0,"moderate":0,"low":0,"max_cvss":0.0}
                   sev = {'critical':0,'high':0,'moderate':0,'low':0}
                   max_cvss = 0.0
                   for item in data:
@@ -159,7 +172,7 @@ jobs:
                   return {"critical":0,"high":0,"moderate":0,"low":0,"max_cvss":0.0}
 
           killed, survived, timeout, considered, source = read_mutation_counts()
-          score = 100.0 if considered == 0 else round((killed / considered) * 100.0, 2)
+          score = 100.0 if considered == 0 else round((killed / max(1, considered)) * 100.0, 2)
           deps = read_dep_metrics()
           out = {
               "ecosystem": "python",
